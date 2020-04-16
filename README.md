@@ -19,5 +19,5 @@ http://picrust.github.io/picrust/picrust_precalculated_files.html
 
 Additionally, the green genes database is also required.
 
-* 97_otus.fasta
-* 97_otu_taxonomy.txt
+* [97_otus.fasta](ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/rep_set/97_otus.fasta) 137M md5:`50b2269712b3738afb41892bed936c29`
+* [97_otu_taxonomy.txt](ftp://greengenes.microbio.me/greengenes_release/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt) 9.7M md5:`56ef15dccf2e931ec173f4f977ed649b`
