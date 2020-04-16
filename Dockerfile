@@ -52,13 +52,24 @@ RUN wget \
     && \
     tar -xzf picrust-1.1.0.tar.gz && \
     cd picrust-1.1.0 && \
-    pip install -e . && \
-    cd picrust/data && \
-    wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/16S_13_5_precalculated.tab.gz && \
-    wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/ko_13_5_precalculated.tab.gz 
-    #wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/cog_13_5_precalculated.tab.gz && \
-    #wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/rfam_13_5_precalculated.tab.gz 
-    #wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/variances/16S_13_5_precalculated_variances.tab.gz && \
-    #wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/variances/ko_13_5_precalculated_variances.tab.gz && \
-    #wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/variances/cog_13_5_precalculated_variances.tab.gz && \
-    #wget http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/variances/rfam_13_5_precalculated_variances.tab.gz
+    pip install -e . 
+
+COPY data/db/ko_13_5_precalculated.tab.bz2 /picrust-1.1.0/picrust/data/
+COPY data/db/16S_13_5_precalculated.tab.bz2 /picrust-1.1.0/picrust/data/
+
+RUN bzcat /picrust-1.1.0/picrust/data/ko_13_5_precalculated.tab.bz2 | \
+    gzip > /picrust-1.1.0/picrust/data/ko_13_5_precalculated.tab.gz && \
+    rm /picrust-1.1.0/picrust/data/ko_13_5_precalculated.tab.bz2 && \
+    bzcat /picrust-1.1.0/picrust/data/16S_13_5_precalculated.tab.bz2 | \
+    gzip > /picrust-1.1.0/picrust/data/16S_13_5_precalculated.tab.gz && \
+    rm /picrust-1.1.0/picrust/data/16S_13_5_precalculated.tab.bz2
+
+COPY data/db/97_otus.fasta.bz2  /database/
+COPY data/db/97_otu_taxonomy.txt.bz2  /database/
+
+RUN bzip2 -d /database/97_otus.fasta.bz2 && \
+    bzip2 -d /database/97_otu_taxonomy.txt.bz2
+
+ENV GREEN_GENES_USEARCH_DB="/database/97_otus.fasta"
+ENV GREEN_GENES_FASTA_DB="/database/97_otus.fasta"
+ENV GREEN_GENES_TAXONOMY_DB="/database/97_otu_taxonomy.txt"
