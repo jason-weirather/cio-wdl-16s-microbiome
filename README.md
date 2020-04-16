@@ -14,8 +14,8 @@ This workflow is a dockerized wdl implementation of the [Huttenhower lab](http:/
 
 http://picrust.github.io/picrust/picrust_precalculated_files.html
 
-* [16S_13_5_precalculated.tab.gz](http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/16S_13_5_precalculated.tab.gz) 786K md5:2fb637cbf5b0898bbca15a94e9a08f1f
-* [ko_13_5_precalculated.tab.gz](http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/ko_13_5_precalculated.tab.gz) 242M md5:8220d5b3f48af4a86c1542973a365500
+* [16S_13_5_precalculated.tab.gz](http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/16S_13_5_precalculated.tab.gz) 786K md5:`2fb637cbf5b0898bbca15a94e9a08f1f`
+* [ko_13_5_precalculated.tab.gz](http://kronos.pharmacology.dal.ca/public_files/picrust/picrust_precalculated_v1.1.4/13_5/ko_13_5_precalculated.tab.gz) 242M md5:`8220d5b3f48af4a86c1542973a365500`
 
 Additionally, the green genes database is also required.
 
