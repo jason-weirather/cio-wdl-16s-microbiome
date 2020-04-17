@@ -5,12 +5,14 @@ RUN apt-get update \
     && apt-get upgrade -y \
     && DEBIAN_FRONTEND='noninteractive' apt-get install -y \
                nano \
+               zip unzip \
                wget \
                git \
                apt-utils \
                build-essential \
                sudo \
                libhdf5-serial-dev \
+               texlive \
     && apt-get autoremove \
     && apt-get clean
 
@@ -27,6 +29,7 @@ RUN conda --version
 
 RUN conda install -c conda-forge \
                   -c bioconda \
+                  -c biobakery \
           python=2.7 \
           cython \
           numpy \
@@ -35,17 +38,14 @@ RUN conda install -c conda-forge \
           vsearch==2.14.2 \
           clustalo==1.2.3 \
           cogent==1.5.3 \
-          fasttree==2.1.10
-
-#          picrust==1.1.0 \ 
+          fasttree==2.1.10 \
+          anadama2==0.6.7 \
+          pandoc=1.19
 
 
 RUN pip install --upgrade pip &&\
-    pip install anadama2==0.6.7 \
-                biobakery-workflows==0.14.3
+    pip install biobakery-workflows==0.14.3
 
-#RUN conda install -c bioconda vsearch==2.14.2 \
-#                              clustalo==1.2.3
 
 RUN wget \
     https://github.com/picrust/picrust/releases/download/1.1.0/picrust-1.1.0.tar.gz \
@@ -70,6 +70,11 @@ COPY data/db/97_otu_taxonomy.txt.bz2  /database/
 RUN bzip2 -d /database/97_otus.fasta.bz2 && \
     bzip2 -d /database/97_otu_taxonomy.txt.bz2
 
+# Set the environment variables used in the 16S pipe
 ENV GREEN_GENES_USEARCH_DB="/database/97_otus.fasta"
 ENV GREEN_GENES_FASTA_DB="/database/97_otus.fasta"
 ENV GREEN_GENES_TAXONOMY_DB="/database/97_otu_taxonomy.txt"
+
+# Cover down for some ancient dependency that is not available by some obvious install choice
+COPY misc/letltxmacro.sty /usr/share/texlive/texmf-dist/tex/latex/oberdiek/letltxmacro.sty
+RUN mktexlsr
