@@ -54,21 +54,28 @@ RUN wget \
     cd picrust-1.1.0 && \
     pip install -e . 
 
-COPY data/db/ko_13_5_precalculated.tab.bz2 /picrust-1.1.0/picrust/data/
-COPY data/db/16S_13_5_precalculated.tab.bz2 /picrust-1.1.0/picrust/data/
+#COPY data/db/ko_13_5_precalculated.tab.bz2 /picrust-1.1.0/picrust/data/
+#COPY data/db/16S_13_5_precalculated.tab.bz2 /picrust-1.1.0/picrust/data/
 
-RUN bzcat /picrust-1.1.0/picrust/data/ko_13_5_precalculated.tab.bz2 | \
+RUN cd /picrust-1.1.0/picrust/data/ && \
+    wget https://github.com/jason-weirather/cio-wdl-16s-microbiome/raw/master/data/db/16S_13_5_precalculated.tab.bz2 && \
+    wget https://github.com/jason-weirather/cio-wdl-16s-microbiome/raw/master/data/db/ko_13_5_precalculated.tab.bz2 && \
+    bzcat ko_13_5_precalculated.tab.bz2 | \
     gzip > /picrust-1.1.0/picrust/data/ko_13_5_precalculated.tab.gz && \
     rm /picrust-1.1.0/picrust/data/ko_13_5_precalculated.tab.bz2 && \
-    bzcat /picrust-1.1.0/picrust/data/16S_13_5_precalculated.tab.bz2 | \
+    bzcat 16S_13_5_precalculated.tab.bz2 | \
     gzip > /picrust-1.1.0/picrust/data/16S_13_5_precalculated.tab.gz && \
     rm /picrust-1.1.0/picrust/data/16S_13_5_precalculated.tab.bz2
 
-COPY data/db/97_otus.fasta.bz2  /database/
-COPY data/db/97_otu_taxonomy.txt.bz2  /database/
+#COPY data/db/97_otus.fasta.bz2  /database/
+#COPY data/db/97_otu_taxonomy.txt.bz2  /database/
 
-RUN bzip2 -d /database/97_otus.fasta.bz2 && \
-    bzip2 -d /database/97_otu_taxonomy.txt.bz2
+RUN mkdir /database && \
+    cd /database && \
+    wget https://github.com/jason-weirather/cio-wdl-16s-microbiome/raw/master/data/db/97_otu_taxonomy.txt.bz2 && \
+    wget https://github.com/jason-weirather/cio-wdl-16s-microbiome/raw/master/data/db/97_otus.fasta.bz2 && \
+    bzip2 -d 97_otus.fasta.bz2 && \
+    bzip2 -d 97_otu_taxonomy.txt.bz2
 
 # Set the environment variables used in the 16S pipe
 ENV GREEN_GENES_USEARCH_DB="/database/97_otus.fasta"

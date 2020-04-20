@@ -37,7 +37,7 @@ task biobakery {
         File taxonomy_closed_reference_tsv = "output_data/all_samples_taxonomy_closed_reference.tsv"
         File taxonomy_open_reference_tsv = "output_data/all_samples_taxonomy_open_reference.tsv"
         File vsearch_otus_tsv = "output_data/all_samples_vsearch_otus.txt"
-        File anadama_log_tsv = "output_data/anadama.log"
+        File anadama_log = "output_data/anadama.log"
         File closed_reference_tre = "output_data/closed_reference.tre"
     }
     meta {
