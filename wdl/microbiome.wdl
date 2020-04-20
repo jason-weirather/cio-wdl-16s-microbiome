@@ -3,7 +3,7 @@
 # Output: A sorted merged bam
 
 task biobakery {
-    Array[Map[String,String]] samples
+    Array[Object] samples
 
     Int? memory = 16
     Int? disk_space = 200
@@ -23,6 +23,8 @@ task biobakery {
     }
     command <<<
         mkdir mytempdir
+        echo "samples is:"
+        echo "${samples}"
         echo "Hello World"
         touch sorted.bam
     >>>
