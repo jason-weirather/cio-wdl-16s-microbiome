@@ -78,3 +78,5 @@ ENV GREEN_GENES_TAXONOMY_DB="/database/97_otu_taxonomy.txt"
 # Cover down for some ancient dependency that is not available by some obvious install choice
 COPY misc/letltxmacro.sty /usr/share/texlive/texmf-dist/tex/latex/oberdiek/letltxmacro.sty
 RUN mktexlsr
+
+COPY scripts/prepare_inputs.py /scripts/prepare_inputs.py
