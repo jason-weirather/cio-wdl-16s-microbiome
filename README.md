@@ -1,4 +1,5 @@
-# CIO-16S-microbiome-workflow
+# cio-wdl-16s-microbiome
+
 A workflow for executing a microbiome workflow
 
 This workflow will extract OTU's from 16S sequencing data.
