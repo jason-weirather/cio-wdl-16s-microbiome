@@ -3,7 +3,7 @@
 A workflow for executing OTU's from 16S sequencing data.
 
 I'm not an author of the biobakery workflow or affiliated with their lab; this workflow is a dockerized wdl implementation of the [Huttenhower lab](http://huttenhower.sph.harvard.edu
-)'s [16S biobakery workflow](https://github.com/biobakery/biobakery/wiki/biobakery_workflows#3-16s-profiling). I recommend using whatever tools the Huttenhower lab site has before using this workflow.  This workflow will versioned and held more static for reproducibility and will likely not keep up with the author's updates. If you find this pipeline helpful, the biobakery workflow useful they have a recommended citation:
+)'s [16S biobakery workflow](https://github.com/biobakery/biobakery/wiki/biobakery_workflows#3-16s-profiling). I recommend using whatever tools the Huttenhower lab site has before using this workflow.  This workflow will versioned and held more static for reproducibility and will likely not keep up with the author's updates. If you find this pipeline helpful and the biobakery workflow useful they have a recommended citation, but please check their site to make sure its the most relevant for your use case:
 
 > McIver LJ, Abu-Ali G, Franzosa EA, Schwager R, Morgan XC, Waldron L, Segata N, Huttenhower C. bioBakery: a meta'omic analysis environment. Bioinformatics. 2018 Apr 1;34(7):1235-1237. PMID: 29194469.
 
