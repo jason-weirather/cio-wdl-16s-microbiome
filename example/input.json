@@ -8,6 +8,10 @@
     "Sample2":[
       "/homes6/jasonw/LocalWork/test/data/test/sample2_R1_001.fastq.gz",
       "/homes6/jasonw/LocalWork/test/data/test/sample2_R2_001.fastq.gz"
+    ],
+    "Sample3":[
+      "/homes6/jasonw/LocalWork/test/data/test/sample3_R1_001.fastq.gz",
+      "/homes6/jasonw/LocalWork/test/data/test/sample3_R2_001.fastq.gz"
     ]
   }
 }
