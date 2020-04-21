@@ -28,7 +28,7 @@ alias womtool='java -jar /your/path/cromwell-49/womtool-49.jar'
 
 ```
 {
-  "run_biobakery.biobakery.docker": "vacation/cio-wdl-16s-microbiome:version-latest",
+  "run_biobakery.biobakery.docker": "vacation/cio-wdl-16s-microbiome:latest",
   "run_biobakery.biobakery.samples":{
     "Sample1":[
       "/your/path/cio-wdl-16S-microbiome/data/test/sample1_R1_001.fastq.gz",
