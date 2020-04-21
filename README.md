@@ -56,6 +56,24 @@ Tou can modify `example/input.json` to the appropriate path in your system for a
 
 In this example, the json file `output.meta.json` will contain a map to all output files.
 
+Here is an example of the `outputs` section of the `output.meta.json` file.
+
+```
+"outputs": {
+    "run_biobakery.vsearch.categorize_by_function_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_categorize_by_function.tsv",
+    "run_biobakery.vsearch.closed_reference_tre": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/closed_reference.tre",
+    "run_biobakery.vsearch.anadama_log": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/anadama.log",
+    "run_biobakery.vsearch.taxonomy_closed_reference_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_taxonomy_closed_reference.tsv",
+    "run_biobakery.vsearch.eestats2_txt": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_eestats2.txt",
+    "run_biobakery.vsearch.denovo_otu_table_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_denovo_otu_table.tsv",
+    "run_biobakery.vsearch.taxonomy_open_reference_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_taxonomy_open_reference.tsv",
+    "run_biobakery.vsearch.otu_mapping_results_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_otu_mapping_results.tsv",
+    "run_biobakery.vsearch.predict_metagenomes_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_predict_metagenomes.tsv",
+    "run_biobakery.vsearch.read_counts_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_read_counts.tsv",
+    "run_biobakery.vsearch.vsearch_otus_tsv": "/homes6/jasonw/LocalWork/test/cromwell-executions/run_biobakery/8718c711-236e-4951-ab40-2c6beca24239/call-vsearch/execution/output_data/all_samples_vsearch_otus.txt"
+  }
+```
+
 # Details
 
 ### Inputs
