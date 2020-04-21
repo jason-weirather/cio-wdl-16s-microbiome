@@ -13,7 +13,7 @@ I'm not an author of the biobakery workflow or affiliated with their lab; this w
 
 These instructions are based on my execution of the workflow through a Cromwell `Local Backend`.  
 
-1. [Install Cromwell](https://github.com/broadinstitute/cromwell/releases/latest)
+### 1. Install Cromwell [here is the latest version](https://github.com/broadinstitute/cromwell/releases/latest)
 
 I also like to set an alias to the jars.  You may want to modify this to include your configuration file depending on how you are running cromwell, but this will just use the default local backend.
 
@@ -24,7 +24,9 @@ alias cromwell='java -jar /your/path/cromwell-49/cromwell-49.jar'
 alias womtool='java -jar /your/path/cromwell-49/womtool-49.jar'
 ```
 
-2. Prepare the input files you can modify `example/input.json` to the appropriate path in your system for an example.
+### 2. Prepare the input files 
+
+Tou can modify `example/input.json` to the appropriate path in your system for an example.
 
 ```
 {
@@ -46,15 +48,25 @@ alias womtool='java -jar /your/path/cromwell-49/womtool-49.jar'
 }
 ```
 
-3. Execute the run
+### 3. Execute the run
 
 `$ cromwell run -i input.json /your/path/cio-wdl-16S-microbiome/wdl/microbiome.wdl -m output.meta.json`
 
-4. Inspect results
+### 4. Inspect results
 
-The json file `output.meta.json` will contain a map to all output files.
+In this example, the json file `output.meta.json` will contain a map to all output files.
+
+# Details
+
+### Inputs
+
+### Outputs
+
+# Resources
 
 #### Database files
+
+Here I'll try to keep track of reference files used by the workflow.  Thusfar they have been small enough they could be included in the source here and in the docker image, so no additional steps are needed to install these on the user's part.
 
 `picrust` as utilized in this workflow requires two green genes database files.
 
