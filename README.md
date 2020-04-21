@@ -13,7 +13,9 @@ I'm not an author of the biobakery workflow or affiliated with their lab; this w
 
 These instructions are based on my execution of the workflow through a Cromwell `Local Backend`.  
 
-### 1. Install Cromwell [here is the latest version](https://github.com/broadinstitute/cromwell/releases/latest)
+### 1. Install Cromwell 
+
+[here is the latest version](https://github.com/broadinstitute/cromwell/releases/latest)
 
 I also like to set an alias to the jars.  You may want to modify this to include your configuration file depending on how you are running cromwell, but this will just use the default local backend.
 
