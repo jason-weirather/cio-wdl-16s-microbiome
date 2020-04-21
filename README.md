@@ -9,6 +9,51 @@ I'm not an author of the biobakery workflow or affiliated with their lab; this w
 
 > McIver LJ, Abu-Ali G, Franzosa EA, Schwager R, Morgan XC, Waldron L, Segata N, Huttenhower C. bioBakery: a meta'omic analysis environment. Bioinformatics. 2018 Apr 1;34(7):1235-1237. PMID: 29194469.
 
+# Quickstart
+
+These instructions are based on my execution of the workflow through a Cromwell `Local Backend`.  
+
+1. [Install Cromwell](https://github.com/broadinstitute/cromwell/releases/latest)
+
+I also like to set an alias to the jars.  You may want to modify this to include your configuration file depending on how you are running cromwell, but this will just use the default local backend.
+
+I add these to .bashrc
+
+```
+alias cromwell='java -jar /your/path/cromwell-49/cromwell-49.jar'
+alias womtool='java -jar /your/path/cromwell-49/womtool-49.jar'
+```
+
+2. Prepare the input files you can modify `example/input.json` to the appropriate path in your system for an example.
+
+```
+{
+  "run_biobakery.biobakery.docker": "vacation/cio-wdl-16s-microbiome:version-latest",
+  "run_biobakery.biobakery.samples":{
+    "Sample1":[
+      "/your/path/cio-wdl-16S-microbiome/data/test/sample1_R1_001.fastq.gz",
+      "/your/path/cio-wdl-16S-microbiome/data/test/sample1_R2_001.fastq.gz"
+    ],
+    "Sample2":[
+      "/your/path/cio-wdl-16S-microbiome/data/test/sample2_R1_001.fastq.gz",
+      "/your/path/cio-wdl-16S-microbiome/data/test/sample2_R2_001.fastq.gz"
+    ],
+    "Sample3":[
+      "/your/path/cio-wdl-16S-microbiome/data/test/sample3_R1_001.fastq.gz",
+      "/your/path/cio-wdl-16S-microbiome/data/test/sample3_R2_001.fastq.gz"
+    ]
+  }
+}
+```
+
+3. Execute the run
+
+`$ cromwell run -i input.json /your/path/cio-wdl-16S-microbiome/wdl/microbiome.wdl -m output.meta.json`
+
+4. Inspect results
+
+The json file `output.meta.json` will contain a map to all output files.
+
 #### Database files
 
 `picrust` as utilized in this workflow requires two green genes database files.
