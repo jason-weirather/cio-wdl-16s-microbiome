@@ -11,7 +11,7 @@ task vsearch {
     Int? num_preempt = 0
     Int? boot_disk_gb = 10
 
-    String? docker = "vacation/cio-wdl-16s-microbiome:1.0"
+    String? docker = "vacation/cio-wdl-16s-microbiome:latest"
     runtime {
         docker: "${docker}"
         memory: "${memory} GB"
