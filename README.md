@@ -30,8 +30,8 @@ Tou can modify `example/input.json` to the appropriate path in your system for a
 
 ```
 {
-  "run_biobakery.biobakery.docker": "vacation/cio-wdl-16s-microbiome:latest",
-  "run_biobakery.biobakery.samples":{
+  "run_biobakery.vsearch.docker": "vacation/cio-wdl-16s-microbiome:latest",
+  "run_biobakery.vsearch.samples":{
     "Sample1":[
       "/your/path/cio-wdl-16S-microbiome/data/test/sample1_R1_001.fastq.gz",
       "/your/path/cio-wdl-16S-microbiome/data/test/sample1_R2_001.fastq.gz"
