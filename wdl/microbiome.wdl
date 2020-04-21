@@ -2,7 +2,7 @@
 #           optionally can take another array of bams that also get merged
 # Output: A sorted merged bam
 
-task biobakery {
+task vsearch {
     Map[String,Array[File]] samples
 
     Int? memory = 16
@@ -46,6 +46,6 @@ task biobakery {
     }
 }
 workflow run_biobakery {
-    call biobakery
+    call vsearch
 }
 
